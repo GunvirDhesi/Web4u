@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{%block title%}Home{%endblock%}
+
+{%block content%}
+
+<section id="landingPage">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 titleHolder">
+
+        <h1 class="page-title">
+          Web 4 U
+        </h1>
+        <h2 class="page-title-desc">
+          We make websites for you for <strong>FREE</strong>
+        </h2>
+
+        <div class="btnHolderLandingPage">
+          <button style="max-width: 200px;" type="button" class="btn btn-light">Sign Up</button>
+          <button style="max-width: 200px;" type="button" class="btn btn-outline-light">Sign In</button>
+        </div>
+
+
+      </div>
+
+      <div class="col-xl-6">
+        <div class="imageCollageParalax">
+          <img data-speed="5" class="imageLayer" src="{{url_for("static", filename="images/imacDataImage.svg")}}" alt="imac image">
+          <img data-speed="1" class="imageLayer" src="{{url_for("static", filename="images/laptopRobotImage.svg")}}" alt="imac image">
+          <img data-speed="2" class="imageLayer" src="{{url_for("static", filename="images/phoneMessageimage.svg")}}" alt="imac image">
+          <img data-speed="-1" class="imageLayer" src="{{url_for("static", filename="images/websiteImage.svg")}}" alt="imac image">
+          <img data-speed="-4" class="imageLayer" src="{{url_for("static", filename="images/zoomImage.svg")}}" alt="imac image">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JS reference -->
+<script src="{{url_for("static", filename="js/index.js")}}"></script>
+{%endblock%}
