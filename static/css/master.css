@@ -309,8 +309,6 @@ the navbar seperates from the left*/
   animation: animate 1.5s linear infinite;
 }
 
-@media screen and (max-width: 1400px;)
-{
 
 @keyframes animate {
   0%{
@@ -326,6 +324,7 @@ the navbar seperates from the left*/
     top: 30px;
   }
 }
+
 .GoDownArrow-project div:nth-child(1)
 {
   transform: translate(0px,0px) rotate(45deg);
