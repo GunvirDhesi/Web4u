@@ -6,12 +6,13 @@ body
   font-family: 'Poppins', sans-serif !important;
   background-color: #f8f8ff !important;
   overflow-x: hidden;
+  /* min-width:500px; */
 }
 
 #navbar
 {
   width: 100%;
-  position: absolute;
+  position: fixed;
 }
 #navbar .nav-link
 {
@@ -30,6 +31,7 @@ body
 #landingPage
 {
   background-image: linear-gradient(90deg, #FF5F6D,#FFC371);
+  /* height: 100%; */
   padding-left: 1%; /*remove if looking wierd*/
 }
 .titleHolder
@@ -40,7 +42,8 @@ body
 }
 .page-title
 {
-  font-size: 6rem;
+  font-size: 5.5rem;
+  /* font-weight: bold; */
   color: white;
 }
 .page-title-desc
@@ -52,13 +55,15 @@ body
 .btnHolderLandingPage
 {
   margin-top: 10%;
-  align-items: flex-flex-start;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
 }
 .btn
 {
     margin: 10px;
+    width: 12rem;
+
 }
 .btn-light:hover
 {
@@ -86,28 +91,41 @@ body
   height: 100%;
 }
 
-
-.active-nav
-{
-  transform: translateX(-40%);
-  transition: transform 0.5s ease-int;
-}
-
-
-
 .toggleBtn
 {
-  z-index: 100;
+  z-index: 2;
   margin: 50px;
   position: absolute;
   display: block;
 }
-
-/* Making the code phone friendly below */
-@media screen and (max-width:1199px)
+.nav
 {
+  z-index: 10;
+  width: 100%;
+  /* height: 100vh; */
+  height: 10%;
+  /* background-color: rgba(0,0,0,0.8); */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  /* transform: translateX(200%); */
+  transition: transform 0.5s ease-out;
+}
+
+/* Making the code phone friendly below*/
+
+/*
+IMPORTANT NOTES: Underneath may be multiple @media lines, to do with slight changes in the vertical navbar depending on viewport sizes.  This is to
+hopefully avoid the bug where the navbar does not cover all of the left side of the screen.
+*/
+
+@media screen and (max-width:1200px)
+{
+  .container{
+  }
   #landingPage{
     width: 100%;
+    left: 0%;
   }
   .imageCollageParalax
   {
@@ -115,59 +133,115 @@ body
   }
   .titleHolder
   {
-    margin-top: 15% !important;
+    margin-top: 20vmin !important;
     align-content: center;
     text-align: center;
   }
   .page-title
   {
-    font-size: 10rem;
+    font-size: 80 vw;
     color: white;
   }
   .page-title-desc
   {
-    font-size: 3rem;
-    color: #ededed;
+  font-size: 3rem;
+  color: #ededed;
   }
+
   .nav
   {
-    z-index: 10;
-    width: 40%;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.8);
+    z-index: 2;
+    display: block;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-content: flex-start;
+  /* Uncomment this below for cool alternate animation: */
+     margin-left: 50vw;
+    width: 75vw;
+    height: 100vh;
+    opacity: 90%;
+    background-color: #000000;
+    opacity: 92%;
+    /* transform: width: 0vw; */
     transform: translateX(-200%);
-    transition: transform 0.5s ease-out;
+    transition: transform 1s;
+  }
+
+  .active-nav
+  {
+    /*position: absolute;
+    z-index: 10;*
+    padding-right: 10px;
+    width: 50vw;
+    min-width: 75vw;
+    background-color: rgba(0,0,0,0.9);
+    padding-right: 25vw;*/
+      opacity: 92%;
+      transform: translateX(-5vw);
+      height: 100vh;
+      transition: transform 0.5s;
+
+
   }
   .first-nav-link-home
   {
-    margin-top: 3rem;
+    margin-top: 5rem;
   }
   #navbar .nav-link
   {
     font-size: 2rem !important;
+    font-weight: bold;
+    /* margin-left: -300px; */
+  }
+
+  .btn
+  {
+    /* this section seems to alter the sign up and sign in buttons*/
+  }
+  .btnHolderLandingPage /*This is the Sign Up, Sign In button section*/
+  {
+    align-items: flex-flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
   }
 
   /* TOGGLE BTN */
+  .toggleBtn{
+    position: absolute;
+    /* transform: translateX(-20vw) */
+    top: -20px;
+    left: -10px;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 35px;
+    /* background: grey; Uncomment this to see the bounding box of the toggle */
+  }
   .toggleBtnDiv
   {
     width: 3rem;
     height: 0.3rem;
     background-color: white;
-    margin-top: 10px;
     border-radius: 20px;
-  }
+    flex-grow: 0.5;
+    margin: 2px;
+}
   /* Getting ref to all lines */
   .toggleBtn div
   {
+    /* position: absolute; */
     transition: all 0.3s ease;
   }
-  /* Each of the lines below */
+
+  /*Each of the lines below */
   .toggleBtnDivOne
   {
-    transform: rotate(45deg) translate(-5px,5px);
+    transform: rotate(45deg) translate(-5px,5px);;
+    flex-grow: 0.1;
+    height: 8px;
+    opacity: 100%;
   }
   .toggleBtnDivTwo
   {
@@ -175,12 +249,15 @@ body
   }
   .toggleBtnDivThree
   {
-    transform: rotate(-45deg) translate(5px,-15px);
+    transform: rotate(-50deg) translate(5px,-13px);
+    flex-grow: 0.1;
+    height: 8px;
+    opacity: 100%;
   }
 }
 
-
-@media screen and (min-width:1199px)
+@media screen and (min-width:1199px) /*If the screen is big enough for
+ desktop mode*/
 {
   .imageCollageParalax
   {
@@ -192,6 +269,11 @@ body
   }
 }
 
+@media screen and (min-width: 178px) /*The exact point where
+the navbar seperates from the left*/
+{
+
+}
 
 /* Projects.css */
 .landingCenter-project
@@ -226,6 +308,10 @@ body
   z-index: 10;
   animation: animate 1.5s linear infinite;
 }
+
+@media screen and (max-width: 1400px;)
+{
+
 @keyframes animate {
   0%{
     opacity: 0%;
