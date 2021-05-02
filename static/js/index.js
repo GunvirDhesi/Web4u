@@ -9,3 +9,12 @@ function paralax(e)
     move.style.transform = 'translateX(' + x + 'px) translateY(' + y + 'px)'
   })
 }
+
+
+
+$(".donations").click(function(){
+  window.open("https://ca.gofundme.com/");
+});
+$(".instagram").click(function(){
+  window.open("https://www.instagram.com/site.4.u/");
+})

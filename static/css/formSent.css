@@ -1,0 +1,33 @@
+body
+{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#landingPage
+{
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#sent
+{
+  color: white;
+  font-size: 4rem;
+  margin: 5%;
+}
+button
+{
+  font-size: 1.4rem !important;
+}

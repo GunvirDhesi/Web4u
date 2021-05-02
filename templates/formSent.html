@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block title%}Contact Us{%endblock%}
+{%block css%}
+<link rel="stylesheet" href="{{url_for("static", filename = "css/formSent.css")}}">
+{%endblock%}
+{%block content%}
+
+<section id="landingPage">
+  <div class="container">
+    <h1 id="sent">Your form is sent</h1>
+    <button type="button" class="btn btn-outline-light">Go Back</button>
+  </div>
+</section>
+
+<!-- JS reference -->
+<script src="{{url_for("static", filename="js/formSent.js")}}"></script>
+{%endblock%}

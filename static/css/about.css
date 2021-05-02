@@ -1,0 +1,65 @@
+/* Abous us page */
+.about_row
+{
+  min-height: 100vh;
+}
+.about_eachOfUs
+{
+  margin-top: 4%;
+  margin-bottom: 1%;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+}
+.card-text{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.card-body
+{
+
+  text-align: center !important;
+}
+.card-body .btn
+{
+  width: 100px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+
+}
+.about_eachOfUs .card
+{
+  border: 0;
+}
+.about_eachOfUs .card-img-top
+{
+  max-width: 90%;
+  border-radius: 30px;
+}
+.about_eachOfUs .card
+{
+  width: 200px !important;
+  height: 300px;
+  margin: 2% 0 0 0;
+  overflow-y: hidden;
+}
+
+.ourMission
+{
+  text-align: center;
+  margin: 3%;
+}
+.ourMission .container
+{
+  width: 50%;
+}
+.ourMission .title
+{
+  margin-top: 10%;
+  font-size: 4rem;
+}
+.FAQ .desc
+{
+  text-align: left !important;
+}

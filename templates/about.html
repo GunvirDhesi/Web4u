@@ -1,19 +1,129 @@
 {%extends 'base.html'%}
-{%block title%}About{%endblock%}
+{%block title%}About Us{%endblock%}
+
+{%block css%}
+<link rel="stylesheet" href="{{url_for("static", filename = "css/about.css")}}">
+{%endblock%}
 
 {%block content%}
 
-<section class="">
+<section id="landingPage">
   <div class="container">
-    <div class="col-lg-6">
-      <h1 class="page-title">Abous Us</h1>
-      <h2 class="page-title-desc">Meet Our Team</h2>
-    </div>
-    <div class="col-lg-6">
+    <div class="row about_row">
+      <div class="col-xl-6 titleHolder">
 
+        <h1 class="page-title">
+          About Us
+        </h1>
+        <h2 class="page-title-desc">
+          Meet our team
+        </h2>
+      </div>
+
+      <div class="col-xl-6" style="margin-top:3%;">
+          <section class="about_eachOfUs">
+            {% for i in range(5) %}
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+
+                  {%if i == 0: %}
+                    <img src="{{url_for('static', filename='images/profileimages/gunvir.png')}}" class="card-img-top" alt="gunvir">
+                    <p class="card-text">Gunvir Dhesi</p>
+                    <p class="card-text">Founder.</p>
+                    <button value="Gunvir" type="button" class="btn btn-dark">More</button>
+                  {%endif%}
+                  {%if i == 1: %}
+                    <img src="{{url_for('static', filename='images/profileimages/rajan.png')}}" class="card-img-top" alt="rajan">
+                    <p class="card-text">Rajan Agarwal</p>
+                    <p class="card-text">Head of UI Design.</p>
+                    <button value="Rajan" type="button" class="btn btn-dark">More</button>
+                  {%endif%}
+                  {%if i == 2:%}
+                    <img src="{{url_for('static', filename='images/profileimages/vivek.png')}}" class="card-img-top" alt="vivek">
+                    <p class="card-text">Vivek Upadhyay</p>
+                    <p class="card-text">Head of Mobile Design.</p>
+                    <button value="Vivek" type="button" class="btn btn-dark">More</button>
+                  {%endif%}
+                  {%if i == 3:%}
+                    <img src="{{url_for('static', filename='images/profileimages/manvir.png')}}" class="card-img-top" alt="cameron">
+                    <p class="card-text">Manvir Singh</p>
+                    <p class="card-text">Head of UX Design.</p>
+                    <button value="Manvir" type="button" class="btn btn-dark">More</button>
+                  {%endif%}
+                  {%if i == 4:%}
+                    <img src="{{url_for('static', filename='images/profileimages/icon.png')}}" class="card-img-top" alt="Manvir">
+                    <p class="card-text">Cameron P.</p>
+                    <p class="card-text">Mobile Designer.</p>
+                  {%endif%}
+
+
+
+
+                </div>
+              </div>
+            {%endfor%}
+          </section>
+      </div>
     </div>
+
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#E8E8E8" fill-opacity="1" d="M0,128L48,128C96,128,192,128,288,128C384,128,480,128,576,144C672,160,768,192,864,176C960,160,1056,96,1152,80C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
+</section>
+
+<section class="ourMission">
+  <div class="container">
+    <!-- Our Mission -->
+    <h1 class="title">Our Mission:</h1>
+    <p class="desc">
+      The COVID-19 Pandemic has introduced an array of obstacles for small businesses, startups and individuals passionate about innovation. Our mission is to bridge the gap between you and a strong digital presence. We prioritize speed, quality and transparency in our work, ensuring a usable and scalable product for <em>free</em>.
+    </p>
+    <!-- Why Us -->
+    <h1 class="title">Why Us?</h1>
+    <p class="desc">
+      Finding affordable and reliable designers and developers is a remarkably tedious task. We understand that your budget can be tough due to unexpected circumstances, which is why we are offering our services for free. Our developers, designers and content creators are dedicated to creating a site perfect for you. Our objective is to make the experience easy for your corporate or personal needs.
+    </p>
+
+
+
+    <!-- FAQ -->
+    <div class="FAQ">
+      <h1 class="title">F.A.Q</h1>
+      <p class="desc">
+        <strong>Q:</strong> What are some sites that you have built?
+        <br>
+        <strong>A:</strong> We have built enough to ensure that you will love your site if you decide to go with us, check out the "Projects" page.
+
+        <br>
+        <br>
+
+        <strong>Q:</strong> How can we trust you?
+        <br>
+        <strong>A:</strong> All of our services are free for use, meaning there is nothing on our behalf that could impact you negatively. You will receive all source code and rights to the result.
+
+        <br>
+        <br>
+
+        <strong>Q:</strong> What if we need it faster?
+        <br>
+        <strong>A:</strong> Since we consist of experienced developers, we can try to build your website ASAP if a request is put in. Contact us ASAP to get a timing estimate.
+
+        <br>
+        <br>
+
+        <strong>Q:</strong> Can we sell this website as our own?
+        <br>
+        <strong>A:</strong> Once the site is developed it is up to you to choose what to do with it. But we will be displaying all finished sites under our "Projects" tab.
+
+      </p>
+    </div>
+
+
+
+
   </div>
 </section>
+
 
 
 <!-- JS reference -->

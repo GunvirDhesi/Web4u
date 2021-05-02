@@ -1,0 +1,135 @@
+
+@media screen and (max-width:1200px)
+{
+  .container{
+  }
+  #landingPage{
+    width: 100%;
+    left: 0%;
+  }
+  .imageCollageParalax
+  {
+    display: none !important;
+  }
+  .titleHolder
+  {
+    margin-top: 20vmin !important;
+    align-content: center;
+    text-align: center;
+  }
+  .page-title
+  {
+    font-size: 80 vw;
+    color: white;
+  }
+  .page-title-desc
+  {
+  font-size: 3rem;
+  color: #ededed;
+  }
+
+  .nav
+  {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-left: 50vw;
+    width: 50vw;
+    /*height: 100vh;*/
+
+    opacity: 90%;
+    background-color: #000000;
+    opacity: 92%;
+    transform: width: 0vh;
+    transform: translateX(200%);
+    transition: transform 0s;
+  }
+  .active-nav
+  {
+      opacity: 92%;
+      transform: translateX(10vw);
+      height: 100vh;
+      transition: transform 1s;
+  }
+  .first-nav-link-home
+  {
+    margin-top: 5rem;
+  }
+  #navbar .nav-link
+  {
+    font-size: 2rem !important;
+    font-weight: bold;
+    /* margin-left: -300px; */
+  }
+
+  .btnHolderLandingPage /*This is the Sign Up, Sign In button section*/
+  {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  /* TOGGLE BTN */
+  .toggleBtn{
+    position: absolute;
+    /* transform: translateX(-20vw) */
+    top: -20px;
+    left: -10px;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 35px;
+    /* background: grey; Uncomment this to see the bounding box of the toggle */
+  }
+  .toggleBtnDiv
+  {
+    width: 3rem;
+    height: 0.3rem;
+    background-color: white;
+    border-radius: 20px;
+    flex-grow: 0.5;
+    margin: 2px;
+}
+  /* Getting ref to all lines */
+  .toggleBtn div
+  {
+    /* position: absolute; */
+    transition: all 0.2s ease;
+  }
+
+  /*Each of the lines below */
+  .toggleBtnDivOne
+  {
+    transform: rotate(45deg) translate(-5px,5px);;
+    flex-grow: 0.1;
+    height: 8px;
+    opacity: 100%;
+  }
+  .toggleBtnDivTwo
+  {
+    display: none;
+  }
+  .toggleBtnDivThree
+  {
+    transform: rotate(-50deg) translate(5px,-13px);
+    flex-grow: 0.1;
+    height: 8px;
+    opacity: 100%;
+  }
+}
+
+@media screen and (min-width:1199px) /*If the screen is big enough for
+ desktop mode*/
+{
+  .imageCollageParalax
+  {
+    display: block !important;
+  }
+  .toggleBtn
+  {
+    display: none;
+  }
+}

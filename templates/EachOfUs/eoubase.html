@@ -1,0 +1,72 @@
+{%extends 'base.html'%}
+{%block title%}Meet {{name}}{%endblock%}
+{%block css%}
+<link rel="stylesheet" href="{{url_for("static", filename = "css/eoubase.css")}}">
+{%endblock%}
+
+{%block content%}
+<body>
+  <section id="body">
+    <div class="desktop">
+      <table>
+          <tr>
+              <td id='td-1'>
+                <img id='profile-pic' src="{{url_for('static',filename='images/ProfileImages/{}.png'.format(name))}}" alt="image of {{name}}" onerror="{{url_for('static',filename='images/ProfileImages/icon.png')}}">
+              </td>
+              <td id='td-2'>
+                <h1>{{name}}</h1>
+                {%if favSport!=''%}
+                  <h3>Hey, I'm {{name}}, and I am {{age}} years old, and I love {{favSport}}.</h3>
+                {%endif%}
+                {%if career!=''%}
+                  <h3>In the near future I want to be a {{career}}</h3>
+                {%endif%}
+                  <h2>{{message}}. {%if instagram!='' or linkedin!=''%}Let's get in touch. {%endif%}</h2>
+                {%if instagram!=''%}
+                  <h4><a href="{{instagram}}">Instagram</a></h4>
+                {%endif%}
+                {%if linkedin!=''%}
+                  <h4><a href="{{linkedin}}">Linkedin</a></h4>
+                {%endif%}
+              </td>
+          </tr>
+      </table>
+</div>
+
+<div class="mobile">
+  <table>
+      <tr>
+
+        <td id='td-1'>
+          <img id='profile-pic' src="{{url_for('static',filename='images/ProfileImages/{}.png'.format(name))}}" alt="image of {{name}}" onerror="{{url_for('static',filename='images/ProfileImages/icon.png')}}">
+        </td>
+      </tr>
+      <tr>
+        <td id='td-2'>
+          <h1>{{name}}</h1>
+          {%if favSport!=''%}
+            <h3>Hey, I'm {{name}}, and I am {{age}} years old, and I love {{favSport}}.</h3>
+          {%endif%}
+          {%if career!=''%}
+            <h3>In the near future I want to be a {{career}}</h3>
+          {%endif%}
+            <h2>{{message}}. Let's get in touch. </h2>
+          {%if instagram!=''%}
+            <h4><a href="{{instagram}}">Instagram</a></h4>
+          {%endif%}
+          {%if linkedin!=''%}
+            <h4><a href="{{linkedin}}">Linkedin</a></h4>
+          {%endif%}
+        </td>
+      </tr>
+  </table>
+</div>
+
+  </section>
+
+</body>
+
+
+  <!-- JS reference -->
+  <script src="{{url_for("static", filename="js/eoubase.js")}}"></script>
+  {%endblock%}
